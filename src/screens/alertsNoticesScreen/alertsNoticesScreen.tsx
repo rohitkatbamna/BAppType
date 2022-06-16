@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Platform } from "react-native";
 
-function AlertsNotices() {
+function AlertsNoticesScreen() {
 	return (
 		<View>
 			<View style={styles.text_outter}>
@@ -11,7 +11,7 @@ function AlertsNotices() {
 	);
 }
 
-export default AlertsNotices;
+export default AlertsNoticesScreen;
 const styles = StyleSheet.create({
 	Text_alert: {
 		fontWeight: "bold",

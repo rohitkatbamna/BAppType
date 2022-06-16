@@ -6,11 +6,13 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Platform, TouchableOpacity } from "react-native";
 import { Props as oneProps } from "../navigation/mainNavigation";
 import IconBell from "../components/iconBell";
-import Services from "../screens/services/services";
+import ServicesScreen from "../screens/servicesScreen/servicesScreen";
+import StudentProfileScreen from "../screens/studentProfileScreen/studentProfileScreen";
 
 type DrawerStackList = {
 	DashboardScreen: undefined;
-	Services: undefined;
+	ServicesScreen: undefined;
+	StudentProfileScreen: undefined;
 };
 export type Props = DrawerScreenProps<DrawerStackList, "DashboardScreen">;
 const Drawer = createDrawerNavigator<DrawerStackList>();
@@ -27,11 +29,18 @@ function DashboardNavigation({ navigation, route }: oneProps) {
 				}}
 			/>
 			<Drawer.Screen
-				name="Services"
-				component={Services}
+				name="ServicesScreen"
+				component={ServicesScreen}
 				options={{
 					title: "Services",
 					headerRight: () => <IconBell navigation={navigation} route={route} />,
+				}}
+			/>
+			<Drawer.Screen
+				name="StudentProfileScreen"
+				component={StudentProfileScreen}
+				options={{
+					title: "Student Profile",
 				}}
 			/>
 		</Drawer.Navigator>

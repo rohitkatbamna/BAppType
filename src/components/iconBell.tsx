@@ -7,8 +7,8 @@ function IconBell({ navigation, route }: Props) {
 	return (
 		<>
 			<TouchableOpacity
-				style={{ marginRight: Platform.OS === "web" ? "14%" : "8%" }}
-				onPress={() => navigation.navigate("AlertsNotices")}>
+				style={{ marginRight: Platform.OS === "web" ? "10%" : "8%" }}
+				onPress={() => navigation.navigate("AlertsNoticesScreen")}>
 				<FontAwesome name="bell" size={24} color="black" />
 			</TouchableOpacity>
 		</>

@@ -5,18 +5,20 @@ import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../screens/loginScreen/loginScreen";
 import SelectRoleScreen from "../screens/selectRoleScreen/selectRoleScreen";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import ForgetPasswordScreen from "../screens/forgetPassword/forgetPassword";
+import ForgetPasswordScreen from "../screens/forgetPasswordScreen/forgetPasswordScreen";
 import DashboardNavigation from "./dashboardNavigation";
-import AlertsNotices from "../screens/alertsNotices/alertsNotices";
-import PayFee from "../screens/payFee/payFee";
+import AlertsNoticesScreen from "../screens/alertsNoticesScreen/alertsNoticesScreen";
+import PayFeeScreen from "../screens/payFeeScreen/payFeeScreen";
+import CourseRegistrationScreen from "../screens/courseRegistrationScreen/courseRegistrationScreen";
 
 type StackParamList = {
 	LoginScreen: undefined;
 	SelectRoleScreen: undefined;
 	ForgetPasswordScreen: undefined;
 	DashboardNavigation: undefined;
-	AlertsNotices: undefined;
-	PayFees: undefined;
+	AlertsNoticesScreen: undefined;
+	PayFeeScreen: undefined;
+	CourseRegistrationScreen: undefined;
 };
 export type Props = NativeStackScreenProps<StackParamList, "LoginScreen">;
 
@@ -55,17 +57,24 @@ function MainNavigation() {
 					}}
 				/>
 				<Stack.Screen
-					name="AlertsNotices"
-					component={AlertsNotices}
+					name="AlertsNoticesScreen"
+					component={AlertsNoticesScreen}
 					options={{
 						title: "Alerts & Notices",
 					}}
 				/>
 				<Stack.Screen
-					name="PayFees"
-					component={PayFee}
+					name="PayFeeScreen"
+					component={PayFeeScreen}
 					options={{
 						title: "Pay Fees",
+					}}
+				/>
+				<Stack.Screen
+					name="CourseRegistrationScreen"
+					component={CourseRegistrationScreen}
+					options={{
+						title: "Course Registration",
 					}}
 				/>
 			</Stack.Navigator>

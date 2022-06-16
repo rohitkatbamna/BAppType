@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { Props } from "../../navigation/mainNavigation";
 
-function Services({ navigation, route }: Props) {
+function ServicesScreen({ navigation, route }: Props) {
 	return (
 		<View style={styles.main_services}>
 			<TouchableOpacity style={styles.button_main}>
@@ -17,11 +17,15 @@ function Services({ navigation, route }: Props) {
 			<TouchableOpacity
 				style={styles.button_main}
 				onPress={() => {
-					navigation.navigate("PayFees");
+					navigation.navigate("PayFeeScreen");
 				}}>
 				<Text style={styles.button_text}>Pay Fee</Text>
 			</TouchableOpacity>
-			<TouchableOpacity style={styles.button_main}>
+			<TouchableOpacity
+				style={styles.button_main}
+				onPress={() => {
+					navigation.navigate("CourseRegistrationScreen");
+				}}>
 				<Text style={styles.button_text}>Course Registration</Text>
 			</TouchableOpacity>
 			<TouchableOpacity style={styles.button_main}>
@@ -33,7 +37,8 @@ function Services({ navigation, route }: Props) {
 		</View>
 	);
 }
-export default Services;
+export default ServicesScreen;
+
 const styles = StyleSheet.create({
 	main_services: {
 		flexDirection: "row",
@@ -49,9 +54,12 @@ const styles = StyleSheet.create({
 	},
 	button_main: {
 		backgroundColor: "#841584",
-		width: Platform.OS === "web" ? "10%" : "40%",
-		margin: "2%",
-		height: "50%",
+		width: Platform.OS === "web" ? "auto" : "30%",
+		margin: Platform.OS === "web" ? "0.5%" : "2%",
+		height: Platform.OS === "web" ? "50px" : "20%",
 		borderRadius: 10,
+		alignContent: "center",
+		justifyContent: "center",
+		padding: Platform.OS === "web" ? "1%" : "auto",
 	},
 });

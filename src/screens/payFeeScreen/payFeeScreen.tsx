@@ -1,7 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View, Button, Platform } from "react-native";
 
-function PayFee() {
+function PayFeeScreen() {
 	return (
 		<View style={styles.main_view}>
 			<Text style={styles.main_text}>Student fee Details</Text>
@@ -23,15 +23,16 @@ function PayFee() {
 		</View>
 	);
 }
+export default PayFeeScreen;
 const styles = StyleSheet.create({
 	main_view: {
-		margin: "4%",
+		margin: Platform.OS === "web" ? "1%" : "4%",
 	},
 	main_text: {
 		fontWeight: "bold",
 		textAlign: "center",
 		fontSize: 20,
-		marginTop: "12%",
+		marginTop: Platform.OS === "web" ? "2%" : "12%",
 	},
 	one_line: {
 		flexDirection: "row",
@@ -42,4 +43,3 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 	},
 });
-export default PayFee;

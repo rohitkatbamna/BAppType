@@ -37,7 +37,7 @@ function DashboardScreen({ navigation, route }: Props) {
 					<Button
 						title="Services"
 						color="#841584"
-						onPress={() => navigation.navigate("Services")}
+						onPress={() => navigation.navigate("ServicesScreen")}
 					/>
 					<div className="ms-1">
 						<Button title="My Classes" color="#841584" />
@@ -47,7 +47,7 @@ function DashboardScreen({ navigation, route }: Props) {
 				<View style={styles.pressable_section}>
 					<TouchableOpacity
 						style={styles.pressable_services}
-						onPress={() => navigation.navigate("Services")}>
+						onPress={() => navigation.navigate("ServicesScreen")}>
 						<Text style={styles.pressable_text}>Services</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={styles.pressable_services}>

@@ -1,15 +1,26 @@
 import React from "react";
 import { View, Text, StyleSheet, Platform, SafeAreaView } from "react-native";
 import { Button } from "react-native-paper";
+import { Props } from "../../navigation/mainNavigation";
 
-function SelectRoleScreen() {
+function SelectRoleScreen({ navigation, route }: Props) {
 	return (
 		<View style={styles.main_view}>
 			<Text style={styles.select_role_text}>Select Role</Text>
-			<Button mode="contained" style={styles.faculty_admin_button}>
+			<Button
+				mode="contained"
+				style={styles.faculty_admin_button}
+				onPress={() => {
+					navigation.navigate("DashboardNavigation");
+				}}>
 				Faculty
 			</Button>
-			<Button mode="contained" style={styles.faculty_admin_button}>
+			<Button
+				mode="contained"
+				style={styles.faculty_admin_button}
+				onPress={() => {
+					navigation.navigate("DashboardNavigation");
+				}}>
 				Admin
 			</Button>
 		</View>

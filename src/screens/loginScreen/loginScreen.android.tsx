@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { TextInput, Button } from "react-native-paper";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Props } from "../../navigation/mainNavigation";
@@ -19,8 +19,11 @@ function LoginScreen({ route, navigation }: Props) {
 					mode="contained"
 					style={styles.main_button}
 					onPress={() => navigation.navigate("SelectRoleScreen")}>
-					Press me
+					Sign In
 				</Button>
+				<Pressable onPress={() => navigation.navigate("ForgetPasswordScreen")}>
+					<Text style={styles.forget_password_text}>Forget Password ?</Text>
+				</Pressable>
 			</View>
 		</KeyboardAwareScrollView>
 	);
@@ -52,5 +55,8 @@ const styles = StyleSheet.create({
 	},
 	main_button: {
 		marginTop: "4%",
+	},
+	forget_password_text: {
+		marginTop: "3%",
 	},
 });

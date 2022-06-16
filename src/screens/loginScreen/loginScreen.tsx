@@ -3,7 +3,7 @@ import "../../styles/css/loginScreen.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import { Props } from "../../navigation/mainNavigation";
-import { Image, Button } from "react-native";
+import { Image, Button, Pressable, Text } from "react-native";
 
 function LoginScreen({ route, navigation }: Props) {
 	return (
@@ -40,6 +40,9 @@ function LoginScreen({ route, navigation }: Props) {
 					onPress={() => navigation.navigate("SelectRoleScreen")}
 				/>
 			</form>
+			<Pressable onPress={() => navigation.navigate("ForgetPasswordScreen")}>
+				<Text>Forget Password ?</Text>
+			</Pressable>
 		</div>
 	);
 }
